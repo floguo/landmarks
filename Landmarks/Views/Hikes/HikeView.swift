@@ -20,7 +20,7 @@ extension AnyTransition {
 
 struct HikeView: View {
     var hike: Hike
-    @State private var showDetail = false
+    @State private var showDetail = true
 
 
     var body: some View {
@@ -60,5 +60,13 @@ struct HikeView: View {
                     .transition(.moveAndFade)
             }
         }
+    }
+}
+
+#Preview {
+    VStack {
+        HikeView(hike: ModelData().hikes[0])
+            .padding()
+        Spacer()
     }
 }
