@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryHome: View {
     @Environment(ModelData.self) var modelData
+    @State private var showingProfile = false
     
     var body: some View {
         NavigationSplitView {
@@ -24,7 +25,11 @@ struct CategoryHome: View {
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
                 }
             }
+            .listStyle(.inset)
                 .navigationTitle("Featured")
+                .toolbar {
+                    
+                }
         } detail: {
             Text("Select a landmark")
         }
