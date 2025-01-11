@@ -38,7 +38,15 @@ struct ProfileSummary: View {
                         }
                         .padding(.bottom)
                     }
+                }
+                
+                Divider()
+                
+                VStack(alignment: .leading) {
+                    Text("Recent Hikes")
+                        .font(.headline)
                     
+                    HikeView(hike: modelData.hikes[0])
                 }
             }
         }

@@ -26,10 +26,18 @@ struct CategoryHome: View {
                 }
             }
             .listStyle(.inset)
-                .navigationTitle("Featured")
-                .toolbar {
-                    
+            .navigationTitle("Featured")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
                 }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileHost()
+                    .environment(modelData)
+            }
         } detail: {
             Text("Select a landmark")
         }
