@@ -20,6 +20,11 @@ struct LandmarksApp: App {
                 .navigationBarTitleDisplayMode(.inline)
                 #endif
         }
+        #if !os(watchOS)
+        .commands {
+            LandmarkCommands()
+        }
+        #endif
         
         #if os(watchOS)
         WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
