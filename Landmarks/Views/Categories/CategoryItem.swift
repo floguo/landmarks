@@ -16,7 +16,7 @@ struct CategoryItem: View {
                 .renderingMode(.original)
                 .resizable()
                 .frame(width: 155, height: 155)
-                .cornerRadius(5)
+                .cornerRadius(24)
             Text(landmark.name)
                 .font(.caption)
                 .foregroundStyle(Color.black)

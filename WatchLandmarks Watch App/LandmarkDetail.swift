@@ -1,8 +1,8 @@
 //
-//  LandmarkDetail.swift
-//  WatchLandmarks Watch App
+//  ContentView.swift
+//  Landmarks
 //
-//  Created by Flora Guo on 2025-01-11.
+//  Created by Flora Guo on 2025-01-05.
 //
 
 import SwiftUI
@@ -18,37 +18,45 @@ struct LandmarkDetail: View {
     var body: some View {
         @Bindable var modelData = modelData
 
-        ScrollView {
-            VStack {
+        ScrollView(.vertical){
+            VStack(spacing: 2){
                 CircleImage(image: landmark.image.resizable())
                     .scaledToFit()
+                    .padding(8)
+                    .padding(.top, 36)
 
                 Text(landmark.name)
                     .font(.headline)
-                    .lineLimit(0)
+                    .multilineTextAlignment(.center)
 
                 Toggle(isOn: $modelData.landmarks[landmarkIndex].isFavorite) {
                     Text("Favorite")
                 }
+                .padding(.horizontal, 8)
 
                 Divider()
+                    .padding(.vertical, 4)
 
                 Text(landmark.park)
                     .font(.caption)
                     .bold()
-                    .lineLimit(0)
+                    .multilineTextAlignment(.center)
 
                 Text(landmark.state)
                     .font(.caption)
 
                 Divider()
+                    .padding(.vertical, 4)
 
                 MapView(coordinate: landmark.locationCoordinate)
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-            .padding(16)
+            .padding(12)
         }
-        .navigationTitle("Landmarks")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(landmark.name)
+        .ignoresSafeArea(edges: .top)
     }
 }
 

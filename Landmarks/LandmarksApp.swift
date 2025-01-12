@@ -15,10 +15,14 @@ struct LandmarksApp: App {
         WindowGroup {
             ContentView()
                 .environment(modelData)
+                // Add consistent navigation view style for watchOS
+                #if os(watchOS)
+                .navigationBarTitleDisplayMode(.inline)
+                #endif
         }
         
-       #if os(watchOS)
-       WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
-       #endif
+        #if os(watchOS)
+        WKNotificationScene(controller: NotificationController.self, category: "LandmarkNear")
+        #endif
     }
 }
