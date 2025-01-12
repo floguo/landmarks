@@ -19,14 +19,15 @@ struct LandmarkDetail: View {
         @Bindable var modelData = modelData
 
         ScrollView(.vertical){
-            VStack(spacing: 2){
+            VStack(spacing: 4){
                 CircleImage(image: landmark.image.resizable())
                     .scaledToFit()
                     .padding(8)
-                    .padding(.top, 36)
+                    .padding(.bottom, 16)
 
                 Text(landmark.name)
                     .font(.headline)
+                    .lineLimit(0)
                     .multilineTextAlignment(.center)
 
                 Toggle(isOn: $modelData.landmarks[landmarkIndex].isFavorite) {
@@ -52,11 +53,10 @@ struct LandmarkDetail: View {
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-            .padding(12)
+            .padding(.horizontal, 12)
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(landmark.name)
-        .ignoresSafeArea(edges: .top)
     }
 }
 
