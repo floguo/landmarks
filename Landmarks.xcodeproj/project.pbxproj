@@ -408,7 +408,6 @@
 				ADE840742D2906130040E1EA /* LandmarksTests */,
 				ADE8407E2D2906130040E1EA /* LandmarksUITests */,
 				AD476C552D330FF5000C0136 /* WatchLandmarks Watch App */,
-				AD476C662D330FF6000C0136 /* WatchLandmarks Watch AppTests */,
 				AD476C702D330FF6000C0136 /* WatchLandmarks Watch AppUITests */,
 				AD476C9C2D333FC8000C0136 /* MacLandmarks */,
 				AD476CAE2D333FCA000C0136 /* MacLandmarksTests */,
@@ -457,6 +456,7 @@
 		ADE840742D2906130040E1EA /* LandmarksTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD476C662D330FF6000C0136 /* WatchLandmarks Watch AppTests */,
 				ADE840752D2906130040E1EA /* LandmarksTests.swift */,
 			);
 			path = LandmarksTests;
